@@ -2,12 +2,16 @@ document.querySelectorAll("button.drum").forEach((button, i) =>
     button.addEventListener("click", function () {
         console.log(`${this.innerText} (array# ${i}) got clicked`);
         triggerSound(button.innerText);
+        buttonAnimation(button.innerText);
     }));
 
-document.addEventListener("keydown", function(e){
+document.addEventListener("keydown", function (e) {
     // console.log(e.key);
     console.log(`${e.key} got pressed`);
     triggerSound(e.key);
+    buttonAnimation(e.key);
+
+
 })
 
 function triggerSound(key) {
@@ -42,4 +46,12 @@ function triggerSound(key) {
             kick.play();
             break;
     }
+}
+
+function buttonAnimation(key) {
+    let clickedButton = document.querySelector(`.${key}`);
+    clickedButton.classList.add("pressed");
+    setTimeout(function () {
+        clickedButton.classList.remove("pressed");
+    }, 100);
 }
