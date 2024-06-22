@@ -1,23 +1,33 @@
-let buttonColors = ["red", "blue", "gree", "yellow"];
+let buttonColors = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
+let userClickedPattern = [];
 
 function nextSequence() {
     let randomNumber = Math.round(Math.random() * 3);
     let randomChosenColor = buttonColors[randomNumber];
     gamePattern.push(randomChosenColor);
-    return `randomNumber ${randomNumber}, randomChosenColor ${randomChosenColor}, gamePattern ${gamePattern}`;
+    playSoundAnimation(randomChosenColor);
+    
+    // return `randomNumber ${randomNumber}, 
+    // randomChosenColor ${randomChosenColor}, 
+    // gamePattern ${gamePattern}, 
+    // colorId ${colorId}`;
 }
 
-// document.querySelectorAll(".btn").forEach((button, i) =>
-//     button.addEventListener("click", function () {
-//         console.log(`${this.innerText} (array# ${i}) got clicked`);
-//         // triggerSound(button.innerText);
-//         // buttonAnimation(button.innerText);
-//     }));
+$('.btn').each(function (i, button) {
+    $(button).on("click", function () {
+        let userChosenColor = $(this).attr("id");
+        playSoundAnimation(userChosenColor);
+        userClickedPattern.push(userChosenColor);
 
+        // console.log(`${userChosenColor} (array# ${i}) got clicked`);
+        // console.log(`${userClickedPattern}`);
+    });
+});
 
-$('.btn').forEach((button, i) => 
-button.on("click", function () {
-    console.log(this.attr("id"));
-    return alert("complete");
-}));
+function playSoundAnimation(id){
+    let sound = new Audio(`sounds/${id}.mp3`);
+    let wrongSound = new Audio(`sounds/wrong.mp3`);
+    $(`#${id}`).fadeOut(100).fadeIn(100);
+    return id ? sound.play() : wrongSound.play();
+}
