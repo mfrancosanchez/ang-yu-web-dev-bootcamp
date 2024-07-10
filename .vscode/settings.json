@@ -1,18 +1,7 @@
 {
-    "cSpell.ignoreWords": [
-        "MISAEL",
-        "Sono"
-    ],
-    "cSpell.words": [
-        "Alorica",
-        "Aprende",
-        "Centro",
-        "Duarte",
-        "Educativo",
-        "firstname",
-        "Fundacion",
-        "ICDA",
-        "Teleperformance",
-        "UNAD"
-    ]
+    "workbench.activityBar.location": "top",
+    "github.copilot.editor.enableAutoCompletions": false,
+    "github.copilot.advanced": {
+        
+    }
 }
