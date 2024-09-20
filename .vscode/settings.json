@@ -1,5 +1,5 @@
 {
-    "workbench.activityBar.location": "top",
+    "workbench.activityBar.location": "default",
     "github.copilot.editor.enableAutoCompletions": false,
     "github.copilot.advanced": {
         
