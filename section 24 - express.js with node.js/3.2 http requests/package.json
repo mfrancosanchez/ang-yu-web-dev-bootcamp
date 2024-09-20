@@ -1,0 +1,23 @@
+{
+  "name": "3.2-http-requests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfrancosanchez/ang-yu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mfrancosanchez/ang-yu/issues"
+  },
+  "homepage": "https://github.com/mfrancosanchez/ang-yu#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
